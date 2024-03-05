@@ -180,6 +180,10 @@ spec:
           httpGet:
             path: /
             port: 13133
+        ports:
+        - containerPort: 8125
+          name: statsd
+          protocol: UDP
         resources:
           {{- toYaml $clusterReceiver.resources | nindent 10 }}
         volumeMounts:
